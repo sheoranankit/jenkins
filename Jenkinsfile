@@ -5,6 +5,11 @@ pipeline {
         pollSCM '* * * * *'
     }
     stages {
+        stage('pull'){
+            steps {
+                git pull origin main
+            }
+        }
         stage('Build') {
             steps {
                 echo "Building.."
@@ -20,7 +25,7 @@ pipeline {
                 sh '''
                 cd myapp
                 python3 hello.py
-                python3 hello.py --name=Brad
+                python3 hello.py --name=Brad 
                 '''
             }
         }

@@ -1,6 +1,6 @@
 pipeline {
     agent any
-
+    stages {
         stage('Build') {
             steps {
                 echo "Building.."
@@ -16,7 +16,7 @@ pipeline {
                 sh '''
                 cd myapp
                 python3 hello.py
-                python3 hello.py --name=Brad 
+                python3 hello.py --name=Ankit
                 '''
             }
         }
@@ -29,3 +29,4 @@ pipeline {
             }
         }
     }
+}

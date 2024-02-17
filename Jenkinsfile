@@ -1,12 +1,6 @@
 pipeline {
     agent any
 
-    stages {
-        stage('pull'){
-            steps {
-                git pull origin main
-            }
-        }
         stage('Build') {
             steps {
                 echo "Building.."
